@@ -5,13 +5,19 @@
   "main": "main.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "lite-server index.html"
+    "dev": "npx parcel index.html",
+    "build": "npx parcel build index.html"
   },
   "keywords": [],
   "author": "Josh Mu <hello@joshmu.com> (https://joshmu.com/)",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }

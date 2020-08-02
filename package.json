@@ -1,0 +1,17 @@
+{
+  "name": "vue-play",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "lite-server index.html"
+  },
+  "keywords": [],
+  "author": "Josh Mu <hello@joshmu.com> (https://joshmu.com/)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

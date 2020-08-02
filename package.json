@@ -10,14 +10,5 @@
   },
   "keywords": [],
   "author": "Josh Mu <hello@joshmu.com> (https://joshmu.com/)",
-  "license": "MIT",
-  "devDependencies": {
-    "sass": "^1.26.10"
-  },
-  "dependencies": {
-    "vue": "^2.6.11"
-  },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
-  }
+  "license": "MIT"
 }

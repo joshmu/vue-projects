@@ -26,8 +26,9 @@
 
 <script>
 import { computed, ref } from 'vue'
+
 export default {
-  name: 'TodoList',
+  name: 'Todo',
   setup() {
     const items = ref(['one', 'two', 'three'])
     const newItem = ref('')

@@ -19,14 +19,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import './styles/variables.scss';
+
 #app-container {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  min-height: 100vh;
-
   .page-container {
+    height: calc(100vh - #{$header-height});
     max-width: 900px;
     width: 80%;
     margin: 2rem auto;

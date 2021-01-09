@@ -97,10 +97,8 @@ export default {
 
     // additional style to get exact grid layout dynamically
     onMounted(() => {
-      console.log('mounted', datesContainerElem.value)
       const width = datesContainerElem.value.clientWidth
       const cellHeight = Math.round(width / 7)
-      console.log({ cellHeight })
       datesContainerElem.value.style.setProperty(
         '--cell-height',
         `${cellHeight}px`

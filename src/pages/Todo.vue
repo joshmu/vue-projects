@@ -1,4 +1,5 @@
 <template>
+  <h1>Todo</h1>
   <div class="todo-list">
     <ul>
       <li class="item" v-for="(item, idx) in items" :key="idx">

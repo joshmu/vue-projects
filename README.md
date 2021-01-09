@@ -1,4 +1,6 @@
-# Vue Play Projects
+# Vue Projects
+
+A collection of projects to learn the ins and outs of Vue.
 
 - TODO
 - CALENDAR

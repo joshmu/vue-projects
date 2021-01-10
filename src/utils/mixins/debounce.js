@@ -1,4 +1,4 @@
-export default {
+const debounce = {
   data() {
     return {
       timeout: '',
@@ -11,3 +11,5 @@ export default {
     },
   },
 }
+
+export default debounce

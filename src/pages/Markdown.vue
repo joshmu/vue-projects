@@ -17,7 +17,7 @@ export default {
   mixins: [debounce],
   data() {
     return {
-      text: '',
+      text: '# title\n\n__bold__\n\n*italic*',
       timeout: '',
     }
   },
@@ -46,10 +46,22 @@ export default {
   background: lightgray;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-radius: 0.25rem;
-  filter: drop-shadow(0 0 0.75rem black);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  filter: drop-shadow(0 0 0.25rem black);
+
+  @mixin container-title($title) {
+    content: $title;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0.5rem;
+    font-size: 0.75rem;
+    font-style: italic;
+  }
 
   .markdown {
+    position: relative;
     textarea {
       font-size: $font-size;
       padding: 0.5rem;
@@ -61,11 +73,18 @@ export default {
         outline: none;
       }
     }
+    &:before {
+      @include container-title('markdown');
+    }
   }
   .preview {
+    position: relative;
     font-size: $font-size;
     padding: 0.5rem;
     background-color: rgb(245, 245, 245);
+    &:before {
+      @include container-title('preview');
+    }
   }
 }
 </style>

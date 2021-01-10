@@ -10,6 +10,13 @@
         <li v-for="page in pages" :key="page.title">
           <router-link :to="page.to">{{ page.title }}</router-link>
         </li>
+        <li class="auth" v-if="!isLoggedIn" @click="$emit('open-login-modal')">
+          Login
+        </li>
+        <li class="auth" v-else @click="$emit('logout')">
+          Logout
+          <span class="email">{{ authUserEmail }}</span>
+        </li>
       </ul>
     </nav>
   </header>
@@ -22,11 +29,18 @@ export default {
   name: 'AppHeader',
   props: {
     title: { type: String, required: true },
+    isLoggedIn: { type: Boolean, required: true },
+    authUser: Object,
   },
   data() {
     return {
       pages: formattedRoutes,
     }
+  },
+  computed: {
+    authUserEmail() {
+      return this.authUser.email.toLowerCase()
+    },
   },
 }
 </script>
@@ -36,6 +50,9 @@ export default {
 @import '../styles/variables.scss';
 
 .app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,31 +66,46 @@ export default {
       font-size: 1.5rem;
     }
   }
+
+  // underline hover animation & hold on active link
+  @mixin hover-animation {
+    cursor: pointer;
+    text-transform: capitalize;
+    &:after {
+      content: '';
+      display: block;
+      background-color: white;
+      width: 0%;
+      height: 1px;
+      margin: auto;
+      transition: width 0.3s ease-out;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+    &.router-link-exact-active {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
   .nav {
     ul {
       list-style: none;
       display: flex;
       gap: 0.5rem;
-      // underline hover animation & hold on active link
-      a {
-        text-transform: capitalize;
-        &:after {
-          content: '';
-          display: block;
-          background-color: white;
-          width: 0%;
-          height: 1px;
-          margin: auto;
-          transition: width 0.3s ease-out;
+      li {
+        a {
+          @include hover-animation;
         }
-        &:hover {
-          &:after {
-            width: 100%;
-          }
-        }
-        &.router-link-exact-active {
-          &:after {
-            width: 100%;
+        &.auth {
+          @include hover-animation;
+          .email {
+            text-transform: lowercase;
+            font-weight: 600;
           }
         }
       }

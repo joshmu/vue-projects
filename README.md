@@ -12,6 +12,7 @@ A collection of projects to learn the ins and outs of Vue.
 ## Thoughts
 
 - [ ] passing props when to use ':' binding and when not to, what interporlation is occurring here. String vs Object/Array
+- [ ] use of 'in' (no 'of'?) in v-for when iterating with objects or arrays
 
 ## Project setup
 

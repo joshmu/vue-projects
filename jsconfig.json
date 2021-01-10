@@ -1,20 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/components/*": ["src/components/*"]
-    },
-    "checkJs": true,
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    "target": "es2015",
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true
-  }
+    "baseUrl": "./",
+    "paths": {
+      "@/components": ["components/*"]
+    }
+  },
+  "include": ["src/**/*.vue", "src/**/*.js"]
 }

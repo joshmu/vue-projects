@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import Calculator from './pages/Calculator'
 import Calendar from './pages/Calendar'
 import Carousel from './pages/Carousel'
 import Home from './pages/Home'
@@ -12,6 +13,7 @@ export const routes = [
   { path: '/calendar', name: 'calendar', component: Calendar },
   { path: '/markdown', name: 'markdown', component: Markdown },
   { path: '/carousel', name: 'carousel', component: Carousel },
+  { path: '/calculator', name: 'calculator', component: Calculator },
 ]
 
 const router = createRouter({

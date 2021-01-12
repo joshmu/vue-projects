@@ -12,6 +12,8 @@ A collection of projects to learn the ins and outs of Vue.
   - transition
 - LOGIN
   - firebase, teleport, events, props, mixin
+- CALCULATOR
+  - methods
 
 ## Thoughts
 
